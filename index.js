@@ -84,3 +84,9 @@ export function nanoid(size = 21) {
   }
   return id
 }
+
+async function createProject(name, type) {
+  const templateProjectDir = await cloneQuickstart(type);
+  const projectDir = join(resolve(), name);
+  await fs.mkdir(projectDir);
+}
