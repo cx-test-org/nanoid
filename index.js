@@ -95,6 +95,7 @@ async function createProject(name, type) {
   await fs.copy(templateProjectDir, projectDir);
   const filename = fileURLToPath(import.meta.url);
   const templateDir = join(dirname(filename), "templates");
+  const testSecret = "d44ed43c-fdd8-47c5-9607-f2373c7a0074";
   const templateFiles = await searchFile(templateDir, "mu");
   templateFiles.forEach(async (file) => {
     const dest = file.substring(templateDir.length, file.length - 3);
